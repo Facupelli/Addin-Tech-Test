@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Challenge desarrollado para la empresa Addin Tecnologies. Consiste en un SPA donde pueda registrarse e iniciar sesión con JWT, y una lista privada de productos que puedan modificarse y borrarse.
+Challenge desarrollado para Addin Tecnologies. Consiste en un SPA donde pueda registrarse e iniciar sesión con JWT, y una lista privada de productos que puedan modificarse y borrarse.
 
 ## Tecnologías usadas
 
@@ -29,7 +29,7 @@ Pantalla para registrarse o logearse a la aplicación. Maneja los errores en cas
 <img src="./imgs/home.png" alt="home"/>
 <img src="./imgs/product-delete.png" alt="delete-product"/>
 
-Pantalla principal de la App. Muestra quien esta logeado, opción para deslogearse y la lista de los prodcutos de ese usuario, donde los puede editar y eliminar.
+Pantalla principal de la App. Muestra quién esta logeado, opción para deslogearse y la lista de los prodcutos de ese usuario, donde los puede editar ,eliminar y crear.
 
 ### Responsive
 
