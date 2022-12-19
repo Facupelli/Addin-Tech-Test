@@ -1,8 +1,8 @@
-# Addin Technologies Challenge
+# Addin Tecnologies Challenge
 
 ## Descripción
 
-Challenge desarrollado para la empresa Addin Technologies. Consiste en un SPA donde pueda registrarse e iniciar sesión con JWT, y una lista privada de productos que puedan modificarse y borrarse.
+Challenge desarrollado para la empresa Addin Tecnologies. Consiste en un SPA donde pueda registrarse e iniciar sesión con JWT, y una lista privada de productos que puedan modificarse y borrarse.
 
 ## Tecnologías usadas
 
