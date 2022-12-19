@@ -7,31 +7,32 @@ import Button from "../Button/Button";
 
 import s from "./CreateProduct.module.css";
 
-export default function CreateProduct({
-  isOpen,
-  setShowModal,
-  setProducts,
-  productId,
-  productName,
-}) {
-  const [name, setName] = useState(productName ? productName : "");
+export default function CreateProduct({ setShowModal, setProducts, product }) {
+  const [name, setName] = useState(product?.name ? product.name : "");
+  const [price, setPrice] = useState(product?.price ? product.price : null);
   const { userId } = useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      if (productId) {
+      if (product?._id) {
         await axios.put("http://localhost:3001/product", {
           name,
-          id: productId,
+          price,
+          id: product._id,
         });
       } else {
-        await axios.post("http://localhost:3001/product", { name, userId });
+        await axios.post("http://localhost:3001/product", {
+          name,
+          price,
+          userId,
+        });
       }
 
       fetchProducts(userId).then((res) => setProducts(res.data));
       setName("");
+      setPrice("");
       setShowModal(false);
     } catch (e) {
       console.log(e);
@@ -54,9 +55,15 @@ export default function CreateProduct({
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <label>Precio</label>
+        <input
+          type="text"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        />
         <Button
           type="submit"
-          text={productId ? "ACTUALIZAR" : "CREAR"}
+          text={product?._id ? "ACTUALIZAR" : "CREAR"}
           disabled={!name.length > 0}
         />
       </form>

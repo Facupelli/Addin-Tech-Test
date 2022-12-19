@@ -17,20 +17,28 @@
   height: 100%;
 }
 
-.card_container p {
-  font-weight: 600;
+.card_container .padding > p {
+  font-weight: 700;
   overflow: hidden;
   white-space: nowrap; /* Don't forget this one */
   text-overflow: ellipsis;
 }
 
+.card_container .padding {
+  padding: var(--size-2);
+}
+
 .card_container .flex {
-  padding: var(--size-3) var(--size-2);
+  margin-top: var(--size-2);
   border-bottom-left-radius: var(--size-2);
   border-bottom-right-radius: var(--size-2);
   display: flex;
   align-items: center;
   gap: var(--size-2);
+}
+
+.card_container .flex > p {
+  font-weight: 500;
 }
 
 .card_container .flex .margin_l_auto {

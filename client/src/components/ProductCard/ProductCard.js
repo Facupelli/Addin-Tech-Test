@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useContext, useState } from "react";
 import { UserContext } from "../../context/context";
-import { fetchProducts } from "../../utils/products";
+import { fetchProducts, formatPrice } from "../../utils/products";
 
 import Button from "../Button/Button";
 import CreateProduct from "../CreateProduct/CreateProduct";
@@ -32,8 +32,7 @@ export default function ProductCard({ product, setProducts }) {
         <CreateProduct
           setShowModal={setShowUpdateModal}
           setProducts={setProducts}
-          productId={product._id}
-          productName={product.name}
+          product={product}
         />
       </Modal>
 
@@ -59,20 +58,23 @@ export default function ProductCard({ product, setProducts }) {
             src="https://images.unsplash.com/photo-1656543802898-41c8c46683a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
           />
         </div>
-        <div className={s.flex}>
+        <div className={s.padding}>
           <p>{product.name}</p>
-          <div className={s.margin_l_auto}>
-            <Button
-              text="edit"
-              type="button"
-              handleClick={() => setShowUpdateModal(true)}
-            />
-            <Button
-              text="X"
-              styles="danger"
-              type="button"
-              handleClick={() => setShowDeleteModal(true)}
-            />
+          <div className={s.flex}>
+            <p>{formatPrice(product.price)}</p>
+            <div className={s.margin_l_auto}>
+              <Button
+                text="edit"
+                type="button"
+                handleClick={() => setShowUpdateModal(true)}
+              />
+              <Button
+                text="X"
+                styles="danger"
+                type="button"
+                handleClick={() => setShowDeleteModal(true)}
+              />
+            </div>
           </div>
         </div>
       </article>

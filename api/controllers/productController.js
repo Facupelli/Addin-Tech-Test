@@ -12,11 +12,12 @@ module.exports.getProducts = async (req, res) => {
 };
 
 module.exports.createProduct = async (req, res) => {
-  const { name, userId } = req.body;
+  const { name, price, userId } = req.body;
   try {
     if (name) {
       const newProduct = await Product.create({
         name,
+        price,
         userId,
       });
 
@@ -30,13 +31,13 @@ module.exports.createProduct = async (req, res) => {
 };
 
 module.exports.updateProduct = async (req, res) => {
-  const { name, id } = req.body;
+  const { name, price, id } = req.body;
 
   try {
     if (name && id) {
       const updatedProduct = await Product.findByIdAndUpdate(
         { _id: id },
-        { name }
+        { name, price }
       );
       return res.status(200).json({ success: true, updatedProduct });
     }
