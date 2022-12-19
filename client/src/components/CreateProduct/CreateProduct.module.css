@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--size-3);
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: var(--size-2);
+}
+
+.form label {
+  color: var(--gray-11);
+  font-weight: 600;
+  font-size: var(--font-size-0);
+}
+
+.form input {
+  padding: var(--size-2) var(--size-2);
+  border-radius: var(--size-1);
+  border: 2px solid var(--blue-1);
+}
+
+.form input:active,
+.form input:focus {
+  outline: 1px solid var(--blue-3);
+  border: 2px solid var(--blue-3);
+}

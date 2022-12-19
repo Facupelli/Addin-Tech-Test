@@ -1,0 +1,17 @@
+.dialog {
+  max-width: 70ch;
+  min-width: 300px;
+  border: none;
+  border-radius: var(--size-1);
+  padding: var(--size-4);
+  z-index: 1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: var(--shadow-4);
+}
+
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
