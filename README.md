@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Challenge desarrollado para Addin Tecnologies. Consiste en un SPA donde pueda registrarse e iniciar sesión con JWT, y una lista privada de productos que puedan modificarse y borrarse.
+Challenge desarrollado para Addin Tecnologies. Consiste en una SPA donde puedas registrarste e iniciar sesión con JWT. Una lista privada de tus productos, que puedas crear, modificar y eliminar.
 
 ## Tecnologías usadas
 
